@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class="container">
+      <h2>Temperature Converter</h2>
+      <br />
+      <hr>
+      <br />
+      <h3>Enter A Temperature</h3>
+      <div class="inputs">
+        <input type="text" id="temp" placeholder="32.0"><br />
+        <input type="button" id="far" value="C to F">
+        <input type="button" id="cel" value="F to C">
+      </div>
+      <br />
+      <h1 id="result"></h1>
+    </div>
+    <script>
+      var far = document.getElementById('far');
+      var cel = document.getElementById('cel');
+      far.addEventListener('click', toFar);
+      cel.addEventListener('click', toCel);
+
+      function toFar() {
+        var input = document.querySelector('#temp').value;
+        var output = document.querySelector('#result');
+
+        var ans = input * (9 / 5) + 32;
+
+        output.textContent = `Conversion Says:\n${ans} F`;
+      }
+
+      function toCel() {
+        var input = document.querySelector('#temp').value;
+        var output = document.querySelector('#result');
+
+        var ans = (input - 32) * (5/9);
+
+        output.textContent = `Conversion Says:\n${ans} C`;
+      }
+    </script>
+  </body>
+</html>
