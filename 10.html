@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <h2>Math Generator</h2>
+    <hr>
+    <div id="math-form">
+      <div class="fields">
+        <p>1st Number : <input type="text" id="first-num" placeholder="0"></p>
+        <p>2nd Number : <input type="text" id="second-num" placeholder="0"></p>
+        <div class="btns">
+          <input type="button" id="mult" value="Multiply">
+          <input type="button" id="divide" value="Divide">
+          <input type="button" id="clear" value="Clear">
+        </div>
+      </div>
+      <div class="result-field">
+        <h3>The Result Is:</h3>
+        <h3 id="result"></h3>
+      </div>
+    </div>
+    <script>
+      var mult = document.getElementById('mult');
+      var div = document.getElementById('divide');
+      var cl = document.getElementById('clear');
+      mult.addEventListener('click', multiply);
+      div.addEventListener('click', divide);
+      cl.addEventListener('click', clear);
+
+      function clear() {
+        document.querySelector('#first-num').value = "";
+        document.querySelector('#second-num').value = "";
+        document.querySelector('#result').textContent = "";
+      }
+
+      function multiply() {
+        var num1 = document.getElementById('first-num').value;
+        var num2 = document.getElementById('second-num').value;
+
+        var output = num1 * num2;
+
+        document.querySelector('#result').textContent = output;
+      }
+
+      function divide() {
+        var num1 = document.getElementById('first-num').value;
+        var num2 = document.getElementById('second-num').value;
+        var output = num1 / num2;
+
+        document.querySelector('#result').textContent = output;
+      }
+    </script>
+  </body>
+</html>
