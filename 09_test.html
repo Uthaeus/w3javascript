@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div>
+      <h1>Days till Christmas</h1>
+      <h3>Press button to find out how many</h3>
+      <input type="button" id="xmas-btn" value="Press">
+      <h2 id="output"></h2>
+    </div>
+    <script>
+      var xmas = document.getElementById('xmas-btn');
+      xmas.addEventListener('click', findDays);
+
+      function findDays() {
+        var today = new Date();
+        var cmas = new Date(today.getFullYear(), 11, 25);
+        //var output = document.getElementById('ouput');
+        
+        var xnum = Math.ceil((cmas - today) / (1000 * 60 * 60 * 24));
+
+        var result = `${xnum} days till Christmas!`;
+
+        document.querySelector('#output').textContent = result;
+        console.log(result);
+        console.log(today);
+        console.log(cmas);
+      }
+    </script>
+  </body>
+</html>
