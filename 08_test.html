@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>Guessing Game</h1>
+      <p id="instruction">Guess a number between 1 and 10</p>
+      
+      <input type="text" id="user-input">
+      <input type="button" id="user-btn" value="Go">
+      
+      <div>
+        <button id="exit-btn">Quit</button>
+      </div>
+      <p id="output"></p>
+    </div>
+    <hr>
+
+    <div>
+      <input type="button" id="test" value="test">
+    </div>
+    <script>
+      var testOne = document.getElementById('test');
+      testOne.addEventListener('click', testFunction);
+
+      function testFunction() {
+        alert('Hello');
+      }
+      
+      var guessButton = document.getElementById('user-btn');
+      guessButton.addEventListener('click', guessFunction);
+
+      function guessFunction() {
+        var guess = document.getElementById('user-input').value;
+        var out = document.getElementById('output');
+        var num = Math.floor((Math.random() * 10)+1);
+        var result = '';
+
+        if (guess < num) {
+          result = "Your guess is too low";
+        } else if (guess > num) {
+          result = "Your guess is too high";
+        } else if (guess == num) {
+          result = "You guess correctly!";
+        }
+        out.textContent = result;
+        console.log(num);
+        
+      }
+    </script>
+  </body>
+</html>
