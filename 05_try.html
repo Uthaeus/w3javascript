@@ -3,21 +3,15 @@
   <head>
 
   </head>
-  <body onload="test('demo')">
-    <div id="demo">
-      This is a much longer string to see what happens
+  <body>
+    <div>
+      <input type="text" id="demo" placeholder="Enter Sentence"><br />
+      <input type="button" id="demo-btn" value="Enter"><br />
+      <div id="display">
+        <h1 id="out"></h1><br />
+        <input type="button" id="display-btn" value="Animate">
+      </div>
     </div>
-    <script>
-      function test(id) {
-        var element = document.getElementById(id);
-        var textNode = element.childNodes[0];
-        var text = textNode.data;
-
-        setInterval(function () {
-          text = text[text.length - 1] + text.substring(0, text.length - 1);
-          textNode.data = text;
-        }, 200);
-      }
-    </script>
+    <script src="05_try.js" type="text/javascript"></script>
   </body>
 </html>

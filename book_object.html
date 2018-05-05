@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div>
+      <h1>Create a Book Object</h1>
+      <div>
+        <form>
+          <input type="text" id="title" placeholder="Title" autofocus=true><br />
+          <input type="text" id="author" placeholder="Author"><br />
+          <input type="text" id="pages" placeholder="Pages"><br />
+
+          <input type="button" id="submit-btn" onClick="create()" value="Create Book">
+        </form>
+      </div>
+      <div>
+        <h2 id="title-out"></h2><br />
+        <h2 id="author-out"></h2><br />
+        <h2 id="pages-out"></h2><br />
+      </div>
+    </div>
+    <script>
+      
+      function Book(title, author, pages) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.info = function() {
+          return `${this.title} by ${this.author}, ${this.pages}.`
+        }
+      }
+      // var test = new Book('this', 'him', 123);
+      // console.log(test.info());
+      
+      function create() {
+        var t = document.getElementById('title').value;
+        var a = document.getElementById('author').value;
+        var p = document.getElementById('pages').value;
+        var out = document.getElementById('title-out');
+
+        
+
+        var userBook = new Book(t, a, p); 
+        out.innerHTML = userBook.info();
+        console.log(userBook.info());
+      }
+    </script>
+  </body>
+</html>
