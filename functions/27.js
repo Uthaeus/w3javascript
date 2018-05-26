@@ -27,3 +27,4 @@ const palindromer = str => {
 
 
 console.log(palindromer('bananas'));
+console.log(palindromer('something weird to test'));
