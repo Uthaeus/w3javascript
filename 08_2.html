@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class='container'>
+            <h1 id='title'>Guessing Game</h1>
+            <p>Enter Number 1 - 10</p>
+            <div id='input-area'>
+                <input id='user-input' type='text'>
+                <input id='guess-button' type='button' value='Go!'>
+            </div>
+            <div id='output'></div>
+        </div>
+
+        <script>
+            let guessButton = document.getElementById('guess-button');
+            guessButton.addEventListener('click', checkGuess);
+
+            function checkGuess() {
+                let guess = document.getElementById('user-input').value;
+                let compGuess = Math.floor((Math.random() * 10) + 1);
+                let out = document.getElementById('output');
+                let result = '';
+
+                if (guess % 1 != 0) {
+                    alert("Numbers only please");
+                } else if (guess.length < 1) {
+                    result = 'Enter your guess please';
+                } else if (guess > 10) {
+                    result = 'Only to 10 please';
+                } else if (guess == compGuess) {
+                    result = 'Great Guess!';
+                } else if (guess < compGuess && compGuess - guess <= 2) {
+                    result = 'So close, but too low';
+                } else if (guess < compGuess) {
+                    result = 'Too low';
+                } else if (guess > compGuess && guess - compGuess <= 2) {
+                    result = 'So close, but too high';
+                } else if (guess > compGuess) {
+                    result = 'Too high';
+                }
+
+                out.textContent = result;
+
+                console.log(compGuess);
+
+            }
+        </script>
+    </body>
+</html>
