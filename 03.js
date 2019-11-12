@@ -4,7 +4,7 @@
 
 
 const today = new Date();
-var dd = today.getDays();
+var dd = today.getDay();
 var mm = today.getMonth();
 var yyyy = today.getFullYear();
 
