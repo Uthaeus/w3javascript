@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Math Fun</h1>
+            <div id='nums'>
+                <div>
+                    <label>1st Number</label>
+                    <input id='numOne' type='text' />
+                </div>
+                <div>
+                    <label>2nd Number</label>
+                    <input id='numTwo' type='text' />
+                </div>
+            </div>
+            <div id='buttons'>
+                <input id='multiply' type='button' value='Multiply' />
+                <input id='divide' type='button' value='Divide' />
+            </div>
+            <h2 id='out'></h2>
+        </div>
+
+        <script>
+            let multiply = document.getElementById('multiply');
+            let divide = document.getElementById('divide');
+
+            multiply.addEventListener('click', mult);
+            divide.addEventListener('click', div);
+
+            function mult() {
+                let numOne = document.getElementById('numOne').value;
+                let numTwo = document.getElementById('numTwo').value;
+                let out = document.getElementById('out');
+                let result = '';
+
+                if (numOne % 1 != 0 || numTwo % 1 != 0) {
+                    alert("Numbers only Please");
+                } else if (numOne.length < 1 || numTwo.length < 1) {
+                    result = 'It seems you are missing a number';
+                } else {
+                    result = numOne * numTwo;
+                }
+                out.textContent = result;
+            }
+
+            function div() {
+                let numOne = document.getElementById('numOne').value;
+                let numTwo = document.getElementById('numTwo').value;
+                let out = document.getElementById('out');
+                let result = '';
+
+                if (numOne % 1 != 0 || numTwo % 1 != 0) {
+                    alert("Numbers only Please");
+                } else if (numOne.length < 1 || numTwo.length < 1) {
+                    result = 'It seems you are missing a number';
+                } else {
+                    result = numOne / numTwo;
+                }
+                out.textContent = result;
+            }
+        </script>
+    </body>
+</html>
