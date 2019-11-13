@@ -9,6 +9,8 @@ function filer(f) {
   console.log(f);
   console.log(arr);
   console.log(ext);
+
+  // console.log(f.split('.').pop())
 }
 
 var fileName = "abcd.jpeg";
